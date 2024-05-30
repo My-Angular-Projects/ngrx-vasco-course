@@ -3,12 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { UserSelectionComponent } from './components/user-selection/user-selection.component';
-import { MessageSelectionComponent } from './components/message-selection/message-selection.component';
-import { ThreadSelectionComponent } from './components/thread-selection/thread-selection.component';
-import { ThreadListComponent } from './components/thread-list/thread-list.component';
-import { MessageListComponent } from './components/message-list/message-list.component';
+
+import { HeaderComponent } from '@components/header/header.component';
+import { UserSelectionComponent } from '@components/user-selection/user-selection.component';
+import { MessageSelectionComponent } from '@components/message-selection/message-selection.component';
+import { ThreadSelectionComponent } from '@components/thread-selection/thread-selection.component';
+import { ThreadListComponent } from '@components/thread-list/thread-list.component';
+import { MessageListComponent } from '@components/message-list/message-list.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,10 @@ import { MessageListComponent } from './components/message-list/message-list.com
     MessageSelectionComponent,
     ThreadSelectionComponent,
     ThreadListComponent,
-    MessageListComponent
+    MessageListComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
