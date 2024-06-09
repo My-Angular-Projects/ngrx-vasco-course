@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
+import { ThreadsService } from '@shared/services';
 
 @Component({
   selector: 'ngrx-thread-selection',
@@ -6,4 +12,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './thread-selection.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ThreadSelectionComponent {}
+export class ThreadSelectionComponent implements OnInit {
+  private readonly service = inject(ThreadsService);
+
+  ngOnInit(): void {
+    this.service.getUserThreads().subscribe((v) => console.log(v));
+  }
+}
